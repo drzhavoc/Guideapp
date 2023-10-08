@@ -69,7 +69,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
         }
         else {
 
-            Intent intent= new Intent(SignUp.this, signin.class);
+            Intent intent= new Intent(SignUp.this, test11.class);
             startActivity(intent);
 
         }

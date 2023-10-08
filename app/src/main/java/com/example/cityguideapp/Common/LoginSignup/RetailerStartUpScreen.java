@@ -42,7 +42,7 @@ public class RetailerStartUpScreen extends AppCompatActivity implements View.OnC
         if(view.getId()==R.id.login_btn)
         {
 
-            Intent intent = new Intent(RetailerStartUpScreen.this,signin.class);
+            Intent intent = new Intent(RetailerStartUpScreen.this,test11.class);
             startActivity(intent);
             finish();
 

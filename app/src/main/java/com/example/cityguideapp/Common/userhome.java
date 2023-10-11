@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.cityguideapp.Common.LoginSignup.AddPlaceActivity;
 import com.example.cityguideapp.Common.LoginSignup.RetailerStartUpScreen;
 import com.example.cityguideapp.R;
 
@@ -27,7 +28,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 
 public class userhome extends AppCompatActivity implements View.OnClickListener{
-    private Button logout;
+    private Button logout,bt1;
 
     private FirebaseAuth firebaseAuth;
     private boolean canGoBack = false;
@@ -38,9 +39,12 @@ public class userhome extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.activity_userhome);
         firebaseAuth = FirebaseAuth.getInstance();
         logout= (Button) findViewById(R.id.logoutid);
+        bt1= (Button) findViewById(R.id.bt1);
+
 
         // Button selectImagesButton = findViewById(R.id.imageBT);
         logout.setOnClickListener(this);
+        bt1.setOnClickListener(this);
 
 
 
@@ -96,6 +100,11 @@ public class userhome extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View view) {
         if(view.getId()==R.id.logoutid)
             logOut();
+        else
+        {
+            Intent intent = new Intent(userhome.this, AddPlaceActivity.class);
+            startActivity(intent);
+        }
 
 
     }

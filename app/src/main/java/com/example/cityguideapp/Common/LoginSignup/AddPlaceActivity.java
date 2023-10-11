@@ -1,5 +1,6 @@
 package com.example.cityguideapp.Common.LoginSignup;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,6 +11,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.cityguideapp.Common.userhome;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.DocumentReference;
@@ -27,7 +30,7 @@ public class AddPlaceActivity extends AppCompatActivity {
     private EditText emailEditText;
     private EditText descriptionEditText;
     private EditText mapsLinkEditText;
-    private Button submitButton;
+    private Button submitButton,show;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,7 @@ public class AddPlaceActivity extends AppCompatActivity {
         descriptionEditText = findViewById(R.id.editTextDescription);
         mapsLinkEditText = findViewById(R.id.editTextMapsLink);
         submitButton = findViewById(R.id.buttonSubmit);
+        show = findViewById(R.id.buttonshow);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.categories_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -97,5 +101,19 @@ public class AddPlaceActivity extends AppCompatActivity {
                         });
             }
         });
+
+        show.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddPlaceActivity.this, show_places.class);
+                startActivity(intent);
+            }
+
+
+
+        });
+
+
     }
 }

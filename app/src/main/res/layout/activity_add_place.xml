@@ -1,8 +1,9 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Common.LoginSignup.AddPlaceActivity">
 
     <EditText
@@ -66,4 +67,17 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         />
-</RelativeLayout>
+
+
+    <Button
+        android:id="@+id/buttonshow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="view places"
+        android:layout_below="@id/editTextMapsLink"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        />
+
+
+</LinearLayout>
